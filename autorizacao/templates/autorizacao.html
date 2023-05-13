@@ -9,23 +9,32 @@
 {% block 'dashboard' %} 
     <div class='container'>
         <h1>AUTORIZAÇÃO AMBIENTAL</h1>
-        <div class='row'>
-            <div class='col-md'>
-                <p>Categoria</p>
-                <input type="text" class="form-control" placeholder="AI" name="categoria">
+        <div class="row">
+            <div class="col-md card-dashboard">
+                <p class="text-card">Adicionar Autorização</p>
             </div>
-            <div class='col-md'>
-                <p>Tipo</p>
-                <input type="text" class="form-control" placeholder="FRFL" name="tipo">
-            </div>
-            <div class='col-md'>
-                <p>Número</p>
-                <input type="text" class="form-control" placeholder="num/AA" name="numero">
+            <div class="col-md card-dashboard">
+                <p class="text-card">Atualizar Autorização</p>
             </div>
         </div>
         <br>
-        <div class="adicionar-cliente">
+        <div class="adicionar-autorizacao">
             <form action="{% url 'autorizacao' %}" method="POST">{% csrf_token %}
+                <div class='row'>
+                    <div class='col-md'>
+                        <p>Categoria</p>
+                        <input type="text" class="form-control" placeholder="AI" name="categoria" value="{{categoria}}">
+                    </div>
+                    <div class='col-md'>
+                        <p>Tipo</p>
+                        <input type="text" class="form-control" placeholder="FRFL" name="tipo" value="{{tipo}}">
+                    </div>
+                    <div class='col-md'>
+                        <p>Número</p>
+                        <input type="text" class="form-control" placeholder="num/AA" name="ACNum" value="{{numero}}">
+                    </div>
+                </div>
+                <br>
                 <div class="row">
                     <div class="col-md">
                         <p>Emissão:</p>
@@ -41,7 +50,7 @@
                     </div>
                     <div class="col-md">
                         <p>TCA nº:</p>
-                            <input type="text" class="form-control" placeholder="xxx/AA" name="tca">
+                            <input type="text" class="form-control" placeholder="xxx/AA" name="tcaNum">
                     </div>
                 </div>
                 <br>
@@ -163,7 +172,7 @@
                 </div>
                 <div class="col-md">
                     <p>Recuperar - PRAD:</p>
-                    <input type="number" class="form-control" placeholder="xxx,xx m²" name="exoticos">
+                    <input type="number" class="form-control" placeholder="xxx,xx m²" name="recup_PRAD">
                 </div>
             </div>    
             <br>
